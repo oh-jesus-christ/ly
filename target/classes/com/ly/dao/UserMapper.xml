@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+	<mapper namespace="com.ly.dao.UserMapper">
+	
+	<!-- trim标签可以替代其他标签   标签里面有n个属性，可以自动加and，逗号阿什么的   我有点晕 -->
+	
+	
+	<select id="findOne" resultType="com.ly.pojo.Productuser" parameterType="Productuser">
+		
+			select * from productuser where uid=#{uid}
+		</select>
+		
+		<select id="findAll" resultType="com.ly.pojo.Productuser" >
+		 select * from productuser
+		 </select>
+		<update id="update" >
+			update productuser 
+			<set>
+			<!-- set要加逗号，，，等于垃圾 -->
+				<if test="uname!=null">uname=#{uname},</if>
+				<if test="uage!=null">uage=#{uage},</if>
+			</set>
+			<trim prefix="where"><!-- prefix前缀 -->
+				<if test="uid!=null">uid = #{uid}</if>
+			</trim>
+			
+		</update>
+		
+		<insert id="add" >
+			insert into productuser(uid,uname,deptid,uage) values(#{uid},#{uname},#{deptid},#{uage})
+		</insert>
+		
+		<delete id="delete"  parameterType="java.lang.Integer">
+			delete from productuser where uid=#{uid}
+		</delete>
+		
+	</mapper>
