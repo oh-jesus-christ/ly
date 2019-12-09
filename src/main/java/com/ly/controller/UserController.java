@@ -11,7 +11,7 @@ import com.ly.service.IUserService;
 
 @Controller
 public class UserController {
-//¿ØÖÆ²ã
+//¿ØÖÆ²ã666
 	
 	@Autowired
 	private IUserService us;
