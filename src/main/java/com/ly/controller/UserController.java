@@ -19,7 +19,7 @@ public class UserController {
 	@RequestMapping("findOne")
 	public String findOne(Integer uid,HttpServletRequest req) {
 		req.setAttribute("user", us.findOne(uid));
-		return "Update";
+		return "update";
 	}
 	@RequestMapping("findAll")
 	public String findAll(HttpServletRequest req) {
