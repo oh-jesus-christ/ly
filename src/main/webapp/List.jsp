@@ -40,7 +40,7 @@
                					
                				</td>
                         	<td>
-                        	<a class="btn btn-info btn-xs" href="update.do?uid=${g.uid}">修改</a>
+                        	<a class="btn btn-info btn-xs" href="findOne.do?uid=${g.uid}">修改</a>
                         	</td>
                         
                         </tr>
